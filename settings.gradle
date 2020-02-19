@@ -1,2 +1,2 @@
-include ':demo'
+include ':demo', ':library'
 rootProject.name='ScalingAnimationDroid'
