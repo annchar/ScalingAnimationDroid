@@ -22,11 +22,10 @@ class ScalingAnimationDroid @JvmOverloads constructor(
         private const val SCALING_TYPE_DEFAULT = 0
     }
 
-    private var durationActionDown: Long = DURATION_DEFAULT.toLong()
-    private var durationActionUp: Long = DURATION_DEFAULT.toLong()
-    private var scalingType: ScalingAnimationType = ScalingAnimationType.SCALING_IN
-    private var scalingPadding: Float =
-        SCALING_PADDING_DEFAULT
+    var durationActionDown: Long = DURATION_DEFAULT.toLong()
+    var durationActionUp: Long = DURATION_DEFAULT.toLong()
+    var scalingType: ScalingAnimationType = ScalingAnimationType.SCALING_IN
+    var scalingPadding: Float = SCALING_PADDING_DEFAULT
 
     init {
         val typedArray =
@@ -102,8 +101,10 @@ class ScalingAnimationDroid @JvmOverloads constructor(
                 }
 
                 MotionEvent.ACTION_UP -> {
-                    animation(v,
-                        ORIGINAL_XY, durationActionUp)
+                    animation(
+                        v,
+                        ORIGINAL_XY, durationActionUp
+                    )
                 }
             }
             true
@@ -114,8 +115,10 @@ class ScalingAnimationDroid @JvmOverloads constructor(
         super.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    animation(v,
-                        ORIGINAL_XY, durationActionDown)
+                    animation(
+                        v,
+                        ORIGINAL_XY, durationActionDown
+                    )
                 }
 
                 MotionEvent.ACTION_UP -> {
