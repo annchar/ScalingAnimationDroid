@@ -1,7 +1,8 @@
-package com.annchar.scalinganimationdroid
+package com.annchar.scalinganimationdroid.demo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.annchar.scalinganimationdroid.R
 
 class DemoActivity : AppCompatActivity() {
 

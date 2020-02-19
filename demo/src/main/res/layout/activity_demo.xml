@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoActivity">
+    tools:context=".demo.DemoActivity">
 
     <com.annchar.scalinganimationdroid.ScalingAnimationDroid
         android:id="@+id/imageViewTest"
