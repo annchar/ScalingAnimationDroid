@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DemoActivity">
 
-    <com.annchar.scalinganimationdroid.library.ScalingAnimationDroid
+    <com.annchar.scalinganimationdroid.ScalingAnimationDroid
         android:id="@+id/imageViewTest"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

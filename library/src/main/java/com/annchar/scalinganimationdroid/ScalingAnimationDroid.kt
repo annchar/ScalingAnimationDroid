@@ -1,4 +1,4 @@
-package com.annchar.scalinganimationdroid.library
+package com.annchar.scalinganimationdroid
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -6,6 +6,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.annchar.scalinganimationdroid.library.R
 
 class ScalingAnimationDroid @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -24,7 +25,8 @@ class ScalingAnimationDroid @JvmOverloads constructor(
     private var durationActionDown: Long = DURATION_DEFAULT.toLong()
     private var durationActionUp: Long = DURATION_DEFAULT.toLong()
     private var scalingType: ScalingAnimationType = ScalingAnimationType.SCALING_IN
-    private var scalingPadding: Float = SCALING_PADDING_DEFAULT
+    private var scalingPadding: Float =
+        SCALING_PADDING_DEFAULT
 
     init {
         val typedArray =
@@ -100,7 +102,8 @@ class ScalingAnimationDroid @JvmOverloads constructor(
                 }
 
                 MotionEvent.ACTION_UP -> {
-                    animation(v, ORIGINAL_XY, durationActionUp)
+                    animation(v,
+                        ORIGINAL_XY, durationActionUp)
                 }
             }
             true
@@ -111,7 +114,8 @@ class ScalingAnimationDroid @JvmOverloads constructor(
         super.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    animation(v, ORIGINAL_XY, durationActionDown)
+                    animation(v,
+                        ORIGINAL_XY, durationActionDown)
                 }
 
                 MotionEvent.ACTION_UP -> {
