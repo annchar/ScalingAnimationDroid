@@ -2,15 +2,19 @@ package com.annchar.scalinganimationdroid
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.widget.FrameLayout
 import com.annchar.scalinganimationdroid.library.R
 
 class ScalingAnimationDroid @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     companion object {
         private const val SCALE_X_NAME = "scaleX"
@@ -80,11 +84,13 @@ class ScalingAnimationDroid @JvmOverloads constructor(
     private fun animation(v: View, scalingPadding: Float, duration: Long) {
         val scaleDownX = ObjectAnimator.ofFloat(
             v,
-            SCALE_X_NAME, scalingPadding
+            SCALE_X_NAME,
+            scalingPadding
         )
         val scaleDownY = ObjectAnimator.ofFloat(
             v,
-            SCALE_Y_NAME, scalingPadding
+            SCALE_Y_NAME,
+            scalingPadding
         )
         scaleDownX.duration = duration
         scaleDownY.duration = duration
@@ -93,17 +99,23 @@ class ScalingAnimationDroid @JvmOverloads constructor(
         scaleDown.start()
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun scalingInAnimation() {
         super.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    animation(v, scalingPadding, durationActionDown)
+                    animation(
+                        v,
+                        scalingPadding,
+                        durationActionDown
+                    )
                 }
 
                 MotionEvent.ACTION_UP -> {
                     animation(
                         v,
-                        ORIGINAL_XY, durationActionUp
+                        ORIGINAL_XY,
+                        durationActionUp
                     )
                 }
             }
@@ -111,18 +123,24 @@ class ScalingAnimationDroid @JvmOverloads constructor(
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun scalingOutAnimation() {
         super.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     animation(
                         v,
-                        ORIGINAL_XY, durationActionDown
+                        ORIGINAL_XY,
+                        durationActionDown
                     )
                 }
 
                 MotionEvent.ACTION_UP -> {
-                    animation(v, scalingPadding, durationActionUp)
+                    animation(
+                        v,
+                        scalingPadding,
+                        durationActionUp
+                    )
                 }
             }
             true
