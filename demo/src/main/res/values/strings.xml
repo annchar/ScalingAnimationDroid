@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ScalingAnimationDroid</string>
+    <string name="duration_down">Duration Down:</string>
+    <string name="duration_up">Duration Up:</string>
+    <string name="scaling_in">Scaling In</string>
+    <string name="scaling_out">Scaling Out</string>
+    <string name="scaling_type">Scaling Type</string>
+    <string name="love">LOVE</string>
+    <string name="_0ms">0ms</string>
+    <string name="_0">0</string>
+    <string name="_1000ms">1000ms</string>
+    <string name="scaling_padding">Scaling Padding</string>
+    <string name="_1_0f">1.0f</string>
+    <string name="_0_0f">0.0f</string>
 </resources>
