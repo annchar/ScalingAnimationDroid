@@ -2,7 +2,6 @@ package com.annchar.scalinganimationdroid
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import java.lang.ref.WeakReference
@@ -36,7 +35,6 @@ class ScalingAnimationDroid(view: View) {
     }
 
     fun setScalingAnimationType(scalingAnimationType: ScalingAnimationType) {
-        Log.e("Library set scalingType", scalingAnimationType.toString())
         this.scalingType = scalingAnimationType
     }
 
