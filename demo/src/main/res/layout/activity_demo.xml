@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/spacing_medium"
@@ -12,91 +13,85 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:contentPadding="1dp">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/cat3" />
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/spacing_medium"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabLove"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/spacing_large"
-                android:layout_marginRight="@dimen/spacing_large"
-                android:backgroundTint="@color/sky"
-                android:src="@drawable/ic_love" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageViewLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/spacing_large"
-                android:layout_marginRight="@dimen/spacing_large"
-                android:src="@mipmap/ic_launcher" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/imageButtonLike"
-                android:layout_width="70dp"
-                android:layout_height="50dp"
-                android:background="@drawable/ic_like" />
-        </LinearLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonLove"
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/spacing_large"
-            android:text="@string/love" />
+            android:text="@string/todo"
+            android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/scaling_type"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_small" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_medium"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rd_scaling_in"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/scaling_in" />
-
-            <RadioButton
-                android:id="@+id/rd_scaling_out"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/scaling_out" />
-        </RadioGroup>
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/scaling_in"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/scaling_out"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:contentPadding="1dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cat3" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:contentPadding="1dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cat3" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
             android:layout_marginBottom="@dimen/spacing_medium"
             android:orientation="horizontal">
 
@@ -115,7 +110,7 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatSeekBar
-                    android:id="@+id/sbDurationDown"
+                    android:id="@+id/sb_duration_down"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_less" />
@@ -137,7 +132,7 @@
                         android:textSize="@dimen/text_tiny" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textViewDurationDownValue"
+                        android:id="@+id/tv_duration_down_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -178,7 +173,7 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatSeekBar
-                    android:id="@+id/sbDurationUp"
+                    android:id="@+id/sb_duration_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_less" />
@@ -200,7 +195,7 @@
                         android:textSize="@dimen/text_tiny" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textViewDurationUpValue"
+                        android:id="@+id/tv_duration_up_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -241,7 +236,7 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatSeekBar
-                    android:id="@+id/sbScalingPadding"
+                    android:id="@+id/sb_scaling_padding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_less" />
@@ -263,7 +258,7 @@
                         android:textSize="@dimen/text_tiny" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/textViewScalingPaddingValue"
+                        android:id="@+id/tv_scaling_padding_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -283,5 +278,34 @@
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_tiny"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_weight="1"
+                android:onClick="onButtonClicked"
+                android:text="@string/reset" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_tiny"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_weight="1"
+                android:onClick="onButtonClicked"
+                android:text="@string/submit" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>
+
