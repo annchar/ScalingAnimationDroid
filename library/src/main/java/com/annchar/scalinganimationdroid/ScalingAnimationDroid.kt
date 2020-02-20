@@ -52,7 +52,7 @@ class ScalingAnimationDroid(view: View) {
 
     private fun init() {
         view?.get()?.setOnClickListener {
-            resetOriginalXY()
+            reset()
             when (scalingType) {
                 ScalingAnimationType.SCALING_IN -> {
                     scalingInAnimation()
@@ -128,9 +128,9 @@ class ScalingAnimationDroid(view: View) {
         }
     }
 
-    private fun resetOriginalXY() {
-        view?.get()?.clearAnimation()
+    private fun reset() {
         view?.get()?.scaleX = ORIGINAL_XY
         view?.get()?.scaleY = ORIGINAL_XY
+        view?.get()?.clearAnimation()
     }
 }
