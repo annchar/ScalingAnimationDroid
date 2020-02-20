@@ -2,13 +2,9 @@ package com.annchar.scalinganimationdroid
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
-import android.content.Context
-import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import android.widget.FrameLayout
-import com.annchar.scalinganimationdroid.library.R
 import java.lang.ref.WeakReference
 
 class ScalingAnimationDroid(view: View) {
@@ -23,11 +19,10 @@ class ScalingAnimationDroid(view: View) {
     }
 
     private val view: WeakReference<View>?
-
-    var durationActionDown: Long = DURATION_DEFAULT.toLong()
-    var durationActionUp: Long = DURATION_DEFAULT.toLong()
-    var scalingType: ScalingAnimationType = ScalingAnimationType.SCALING_IN
-    var scalingPadding: Float = SCALING_PADDING_DEFAULT
+    private var scalingType: ScalingAnimationType? = null
+    private var durationActionDown: Int? = null
+    private var durationActionUp: Int? = null
+    private var scalingPadding: Float? = null
 
     init {
         this.view = WeakReference(view)
@@ -40,11 +35,33 @@ class ScalingAnimationDroid(view: View) {
         init()
     }
 
+    fun setScalingAnimationType(scalingAnimationType: ScalingAnimationType) {
+        Log.e("Library set scalingType", scalingAnimationType.toString())
+        this.scalingType = scalingAnimationType
+    }
+
+    fun setDurationActionDown(durationActionDown: Int) {
+        this.durationActionDown = durationActionDown
+    }
+
+    fun setDurationActionUp(durationActionUp: Int) {
+        this.durationActionUp = durationActionUp
+    }
+
+    fun setScalingPadding(scalingPadding: Float) {
+        this.scalingPadding = scalingPadding
+    }
+
     private fun init() {
         view?.get()?.setOnClickListener {
+            resetOriginalXY()
             when (scalingType) {
-                ScalingAnimationType.SCALING_IN -> scalingInAnimation()
-                ScalingAnimationType.SCALING_OUT -> scalingOutAnimation()
+                ScalingAnimationType.SCALING_IN -> {
+                    scalingInAnimation()
+                }
+                ScalingAnimationType.SCALING_OUT -> {
+                    scalingOutAnimation()
+                }
             }
         }
     }
@@ -73,8 +90,8 @@ class ScalingAnimationDroid(view: View) {
                 MotionEvent.ACTION_DOWN -> {
                     animate(
                         v,
-                        scalingPadding,
-                        durationActionDown
+                        scalingPadding ?: SCALING_PADDING_DEFAULT,
+                        durationActionDown?.toLong() ?: DURATION_DEFAULT.toLong()
                     )
                 }
 
@@ -82,7 +99,7 @@ class ScalingAnimationDroid(view: View) {
                     animate(
                         v,
                         ORIGINAL_XY,
-                        durationActionUp
+                        durationActionUp?.toLong() ?: DURATION_DEFAULT.toLong()
                     )
                 }
             }
@@ -97,19 +114,25 @@ class ScalingAnimationDroid(view: View) {
                     animate(
                         v,
                         ORIGINAL_XY,
-                        durationActionDown
+                        durationActionDown?.toLong() ?: DURATION_DEFAULT.toLong()
                     )
                 }
 
                 MotionEvent.ACTION_UP -> {
                     animate(
                         v,
-                        scalingPadding,
-                        durationActionUp
+                        scalingPadding ?: SCALING_PADDING_DEFAULT,
+                        durationActionUp?.toLong() ?: DURATION_DEFAULT.toLong()
                     )
                 }
             }
             true
         }
+    }
+
+    private fun resetOriginalXY() {
+        view?.get()?.clearAnimation()
+        view?.get()?.scaleX = ORIGINAL_XY
+        view?.get()?.scaleY = ORIGINAL_XY
     }
 }
