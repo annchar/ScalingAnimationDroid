@@ -14,4 +14,6 @@
     <string name="_1_0f">1.0f</string>
     <string name="_0_0f">0.0f</string>
     <string name="todo">TODO: \n1.Scrolling param.\n2.Touch SUBMIT button.\n3.Click images.\n4.If you choose new params please touch RESET button.</string>
+    <string name="content_ms">Value: %dms</string>
+    <string name="content_f">Value: %.1ff</string>
 </resources>

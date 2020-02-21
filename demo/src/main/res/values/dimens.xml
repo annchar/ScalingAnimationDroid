@@ -5,6 +5,7 @@
     <dimen name="text_small">14sp</dimen>
     <dimen name="text_medium">16sp</dimen>
 
+    <dimen name="spacing_one">1dp</dimen>
     <dimen name="spacing_less">4dp</dimen>
     <dimen name="spacing_tiny">12dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>

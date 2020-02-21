@@ -26,13 +26,13 @@
             android:layout_gravity="center"
             android:text="@string/scaling_type"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_small"
+            android:textSize="@dimen/text_medium"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_tiny"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:contentPadding="1dp">
+                app:contentPadding="@dimen/spacing_one">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:contentPadding="1dp">
+                app:contentPadding="@dimen/spacing_one">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
@@ -304,8 +304,6 @@
                 android:text="@string/submit" />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.core.widget.NestedScrollView>
 

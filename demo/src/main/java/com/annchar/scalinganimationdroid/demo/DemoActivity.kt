@@ -28,6 +28,25 @@ class DemoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_demo)
         resetProgressBarValue()
 
+        /**
+         * Example to use library
+         * Kotlin
+         */
+        /*ScalingAnimationDroid(card_view1).apply {
+            setScalingAnimationType(ScalingAnimationType.SCALING_IN)
+            setDurationActionDown(400)
+            setDurationActionUp(400)
+            setScalingPadding(0.8f)
+        }*/
+
+        // OR
+
+        /*val animateView = ScalingAnimationDroid(card_view1)
+        animateView.setScalingAnimationType(ScalingAnimationType.SCALING_IN)
+        animateView.setDurationActionDown(400)
+        animateView.setDurationActionUp(400)
+        animateView.setScalingPadding(0.8f)*/
+
         sb_duration_down.apply {
             max = 1000
             progress = durationActionDown
@@ -37,7 +56,7 @@ class DemoActivity : AppCompatActivity() {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    tv_duration_down_value.text = "Value: " + progress + "ms"
+                    tv_duration_down_value.text = resources.getString(R.string.content_ms, progress)
                 }
 
                 override fun onStartTrackingTouch(seekBar: SeekBar) {}
@@ -57,7 +76,7 @@ class DemoActivity : AppCompatActivity() {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    tv_duration_up_value.text = "Value: " + progress + "ms"
+                    tv_duration_up_value.text = resources.getString(R.string.content_ms, progress)
                 }
 
                 override fun onStartTrackingTouch(seekBar: SeekBar) {}
@@ -77,7 +96,8 @@ class DemoActivity : AppCompatActivity() {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    tv_scaling_padding_value.text = "Value: " + (progress * 1.0f / 100) + "f"
+                    tv_scaling_padding_value.text =
+                        resources.getString(R.string.content_f, progress * 1.0f / 100)
                 }
 
                 override fun onStartTrackingTouch(seekBar: SeekBar) {}
@@ -118,9 +138,9 @@ class DemoActivity : AppCompatActivity() {
         sb_duration_up.progress = durationActionUp
         sb_scaling_padding.progress = (scalingPadding * 100 / 1.0f).toInt()
 
-        tv_duration_down_value.text = "Value: " + durationActionDown + "ms"
-        tv_duration_up_value.text = "Value: " + durationActionUp + "ms"
-        tv_scaling_padding_value.text = "Value: " + scalingPadding + "f"
+        tv_duration_down_value.text = resources.getString(R.string.content_ms, durationActionDown)
+        tv_duration_up_value.text = resources.getString(R.string.content_ms, durationActionUp)
+        tv_scaling_padding_value.text = resources.getString(R.string.content_f, scalingPadding)
     }
 
     private fun setScalingAnimationDroid() {
