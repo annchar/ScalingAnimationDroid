@@ -1,6 +1,6 @@
 # ScalingAnimationDroid
-[![](https://img.shields.io/badge/Platform-Android-blue.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
 [![](https://jitpack.io/v/annchar/ScalingAnimationDroid.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
+[![](https://img.shields.io/badge/Platform-Android-blue.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
 [![](https://img.shields.io/badge/License-Apache_v2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 <p align="center">
@@ -35,8 +35,8 @@ dependencies {
 ### Kotlin
 Some of material widgets needs to be casted to View, otherwise it will show `Type mismatch` warning.
 ```Kotlin
-  ScalingAnimationDroid(textview_title) // Use attributes default
-  ScalingAnimationDroid(button_search) // Use attributes default
+  ScalingAnimationDroid(textview_title) // Use attributes by default
+  ScalingAnimationDroid(button_search) // Use attributes by default
   
   // Custom Attributes
   ScalingAnimationDroid(card_view1).apply {
@@ -56,8 +56,8 @@ Some of material widgets needs to be casted to View, otherwise it will show `Typ
 ### JAVA
 After views are binded simply pass the name of widget to `ScalingAnimationDroid` constructor. 
 ```java
-  new ScalingAnimationDroid(textview_title); // Use attributes default
-  new ScalingAnimationDroid(button_search); // Use attributes default
+  new ScalingAnimationDroid(textview_title); // Use attributes by default
+  new ScalingAnimationDroid(button_search); // Use attributes by default
   
   // Custom Attributes
   ScalingAnimationDroid animateView = new ScalingAnimationDroid(card_view1);
@@ -70,10 +70,10 @@ After views are binded simply pass the name of widget to `ScalingAnimationDroid`
 ## Config Attributes
 |            Attribute            |            Description            |            Default            |
 | ------------------------------- | -------------------------------   | --------------------------    |
-| Scaling type  (ScalingAnimationType)|The type of animation|ScalingAnimationIn|
-| Duration action down (Int)|Time to control animate for your touch|400 (milliseconds)|
-| Duration action up (Int)|Time to control animate for move on|400 (milliseconds)|
-| Scaling padding (float)|Alpha degree value between 0.0f and 1.0f|0.8f|
+| Scaling animation type  (ScalingAnimationType)|The type of animation.|`ScalingAnimationType.SCALING_IN`|
+| Duration action down (Int)|Time to control animate for your touch.|400 (milliseconds)|
+| Duration action up (Int)|Time to control animate for move on.|400 (milliseconds)|
+| Scaling padding (Float)|Alpha degree value between 0.0f and 1.0f|0.8f|
 
 * ### ScalingAnimationType
     * This is `ScalingAnimationType.SCALING_IN`
