@@ -137,13 +137,13 @@ class DemoActivity : AppCompatActivity() {
         sb_duration_down.progress = durationActionDown
         sb_duration_up.progress = durationActionUp
         sb_scaling_padding.progress = (scalingPadding * 100 / 1.0f).toInt()
-
         tv_duration_down_value.text = resources.getString(R.string.content_ms, durationActionDown)
         tv_duration_up_value.text = resources.getString(R.string.content_ms, durationActionUp)
         tv_scaling_padding_value.text = resources.getString(R.string.content_f, scalingPadding)
     }
 
     private fun setScalingAnimationDroid() {
+        // Initialize ScalingAnimationDroid
         ScalingAnimationDroid(card_view1).apply {
             setScalingAnimationType(ScalingAnimationType.SCALING_IN)
             setDurationActionDown(this@DemoActivity.durationActionDown)
