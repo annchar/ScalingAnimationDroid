@@ -3,6 +3,9 @@
 [![](https://img.shields.io/badge/Platform-Android-blue.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
 [![](https://img.shields.io/badge/License-Apache_v2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
+
+### `ScalingAnimationDroid` It's a library for auto setting and scaling animate for views.
+
 <p align="center">
 <img src="./screenshot/ScalingAnimationDroid.gif" width="500" height="800" />
 </p>
