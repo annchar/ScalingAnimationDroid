@@ -1,4 +1,5 @@
 # ScalingAnimationDroid
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-ScalingAnimationDroid-green.svg?style=flat )]( https://android-arsenal.com/details/1/8052 )
 [![](https://jitpack.io/v/annchar/ScalingAnimationDroid.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
 [![](https://img.shields.io/badge/Platform-Android-blue.svg)](https://jitpack.io/#annchar/ScalingAnimationDroid)
 [![](https://img.shields.io/badge/License-Apache_v2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
